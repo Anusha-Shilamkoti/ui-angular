@@ -1,0 +1,49 @@
+<body>
+    <button class="btn btn-primary"><a class="nav-link" routerLink="/admin">
+            <h5 style="color: white;">Back</h5>
+        </a></button>
+    <br><br>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <h2 style="text-align: center; color: white;">Company List</h2>
+            <br>
+            <table class="table table-sm">
+                <thead class="thead-light">
+                    <tr>
+                        
+                        <th>Company Name</th>
+                        <th>Turn Over</th>
+                        <th>CEO</th>
+                        <th>Board Of Directors</th>
+                        <th>Listed Stock Exchange</th>
+                        <th>Sectors</th>
+                        <th>Brief</th>
+                        <th>Stock Code</th>
+
+                    </tr>
+                </thead>
+                <tbody style="color: white;">
+                    <tr *ngFor="let company of companylist ">
+                        
+                        <td>{{company.companyName}}</td>
+                        <td>{{company.turnOver}}</td>
+                        <td>{{company.ceo}}</td>
+                        <td>{{company.boardOfDirectors}}</td>
+                        <td>{{company.listedStockExchange}}</td>
+                        <td>{{company.sector}}</td>
+                        <td>{{company.brief}}</td>
+                        <td>{{company.stockCode}}</td>
+                        <td><button (click)="updateCompany(company)" class="btn btn-primary">Update</button> </td>
+                        <td><button (click)="deleteCompany(company)" class="btn btn-danger">Delete</button> </td>
+                    </tr>
+                </tbody><br>
+                <button class="btn btn-success"><a class="nav-link" routerLink="/create-company">
+                    <h5 style="color: white;">Add</h5>
+                </a></button>
+            </table>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+
+</body>

@@ -1,0 +1,88 @@
+<body>
+       <button class="btn btn-primary"><a class="nav-link" routerLink="/user">
+            <h5 style="color: white;">Back</h5>
+          </a></button><br>
+      <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                  <div [formGroup]="myGroup">
+                        <div class="row">
+                              <div class="col-lg-3"></div>
+                              <div class="col-sm-6">
+                                    <div class="form-group">
+                                          <label for="Choose" style="color: white;">Select Company/sector</label>
+                                          <select class="form-control" formControlName="choose" data-toggle="tooltip"
+                                                data-placement="right" title="Select" required="required">
+                                                <option value="null">--Select --</option>
+                                                <option value="Company">Company</option>
+                                                <option value="Sector">Sector</option>
+                                          </select>
+                                    </div>
+                              </div>
+                        </div> <br>
+                        <div class="row">
+                              <div class="col-lg-3"></div>
+                              <div class="col-sm-6">
+                                    <div class="form-group">
+                                          <label for="Sectors" style="color: white;">Select Sectors</label>
+                                          <select class="form-control" formControlName="sectorName"
+                                                (change)='sectorChange()' title="Selectgjhg">
+                                                <option value="NSE">NSE</option>
+                                                <option value="BSE">BSE</option>
+                                          </select>
+                                    </div>
+                              </div>
+                        </div> <br>
+                        <div class="row">
+                              <div class="col-lg-3"></div>
+                              <div class="col-sm-6">
+                                    <div class="form-group">
+                                          <label for="name" style="color: white;">CompanyName</label>
+                                          <select class="form-control" formControlName="companyName" title="Select">
+                                                <option *ngFor="let company of companyList "
+                                                      value="{{company.companyName}}">
+                                                      {{company.companyName}}
+                                                </option>
+                                          </select>
+                                    </div>
+                              </div>
+                        </div><br>
+                        <div class="row">
+                              <div class="col-lg-6">
+                                    <div class="form-group">
+                                          <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                                                <input type="date" class="form-control" formControlName="fromdate"
+                                                      placeholder="Date" required="required">
+                                                <div class="alert alert-danger"
+                                                      *ngIf="(myGroup.controls['fromdate'].touched)&&(myGroup.controls['fromdate'].invalid)"
+                                                      style="margin-top: 5px;">
+                                                      <span *ngIf="myGroup.controls['fromdate'].errors.required">Date is
+                                                            Required</span>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="col-lg-6">
+                                    <div class="form-group">
+                                          <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                                                <input type="date" class="form-control" formControlName="todate"
+                                                      placeholder="Date" required="required">
+                                                <div class="alert alert-danger"
+                                                      *ngIf="(myGroup.controls['todate'].touched)&&(myGroup.controls['todate'].invalid)"
+                                                      style="margin-top: 5px;">
+                                                      <span *ngIf="myGroup.controls['todate'].errors.required">Date is
+                                                            Required</span>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Generate Map</button>
+                  </div><br>
+                  <div #container id="container"></div>
+            </div>
+            <div class="col-lg-2"></div>
+      </div>
+</body>

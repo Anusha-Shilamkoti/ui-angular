@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <body>
+ 
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="stockpricesaveform" #saveStockPrice1 (ngSubmit)="saveStockPrice(saveStockPrice1)">  
+        <h3>Create Stock Price</h3> 
+        <div class="form-group">  
+          <label for="companyCode">Company Code</label>  
+          <input type="text" class="form-control" autofocus formControlName="companyCode" data-toggle="tooltip"   
+             data-placement="right" title="Enter companyCode" required>  
+          <div class="alert alert-danger" *ngIf = "(stockpricesaveform.get('companyCode').touched) && (stockpricesaveform.get('companyCode').invalid)"   
+            style="margin-top: 5px;">  
+              <span *ngIf="stockpricesaveform.get('companyCode').errors.required">id is required</span>  
+                <span *ngIf = "stockpricesaveform.get('companyCode').errors.minlength">   
+                    MinLength Error    
+                </span>                     
+            </div>  
+      </div>
+
+
+          <div class="form-group">  
+              <label for="stockExchange">Stock Exchange</label>  
+              <input type="text" class="form-control" required formControlName="stockExchange" data-toggle="tooltip"   
+                 data-placement="right" title="Enter User Name" >  
+              <div class="alert alert-danger" *ngIf = "(stockpricesaveform.get('stockExchange').touched) && (stockpricesaveform.get('stockExchange').invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="stockpricesaveform.get('stockExchange').errors.required">Sector name is required</span>  
+                    <span *ngIf = "stockpricesaveform.get('stockExchange').errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+                </div>  
+          </div>  
+    
+          <div class="form-group">  
+            <label for="currentPrice">Current Price</label>  
+            <input type="text" class="form-control" required formControlName="currentPrice" data-toggle="tooltip"   
+               data-placement="right" title="Enter currentPrice" >  
+            <div class="alert alert-danger" *ngIf = "(stockpricesaveform.get('currentPrice').touched) && (stockpricesaveform.get('currentPrice').invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="stockpricesaveform.get('currentPrice').errors.required">Brief is required</span>  
+                  <span *ngIf = "stockpricesaveform.get('currentPrice').errors.minlength">   
+                      MinLength Error   
+                  </span>                     
+              </div>  
+        </div>
+        <div class="form-group">  
+            <label for="date">Date</label>  
+            <input type="text" class="form-control" required formControlName="date" data-toggle="tooltip"   
+               data-placement="right" >  
+            <div class="alert alert-danger" *ngIf = "(stockpricesaveform.get('date').touched) && (stockpricesaveform.get('date').invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="stockpricesaveform.get('date').errors.required">Brief is required</span>  
+                  <span *ngIf = "stockpricesaveform.get('date').errors.minlength">   
+                      MinLength Error   
+                  </span>                     
+              </div>  
+        </div>
+        <div class="form-group">  
+          <label for="time">Time</label>  
+          <input type="text" class="form-control" required formControlName="time" data-toggle="tooltip"   
+             data-placement="right" title="Enter time" >  
+          <div class="alert alert-danger" *ngIf = "(stockpricesaveform.get('time').touched) && (stockpricesaveform.get('time').invalid)"   
+            style="margin-top: 5px;">  
+              <span *ngIf="stockpricesaveform.get('time').errors.required">Brief is required</span>  
+                <span *ngIf = "stockpricesaveform.get('time').errors.minlength">   
+                    MinLength Error   
+                </span>                     
+            </div>  
+      </div>
+      <div class="form-group">  
+        <label for="uploadFile">uploadFile</label>  
+        <input type="file" class="form-control" required formControlName="uploadFile" data-toggle="tooltip"   
+           data-placement="right" title="Enter uploadFile" >  
+        <div class="alert alert-danger" *ngIf = "(stockpricesaveform.get('currentPrice').touched) && (stockpricesaveform.get('currentPrice').invalid)"   
+          style="margin-top: 5px;">  
+            <span *ngIf="stockpricesaveform.get('uploadFile').errors.required">Brief is required</span>  
+              <span *ngIf = "stockpricesaveform.get('uploadFile').errors.minlength">   
+                  MinLength Error   
+              </span>                     
+          </div>  
+    </div>
+    
+          <button type="submit" class="btn btn-success" [disabled]=!stockpricesaveform.valid>Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div> 
+</body>
+</html>
+

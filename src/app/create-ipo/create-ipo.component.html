@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="iposaveform" #saveIpo1 (ngSubmit)="saveIpo(saveIpo1)">  
+        <h3>{{message}}</h3>
+        <div class="form-group">  
+          <label for="id">Id</label>  
+          <input type="number" class="form-control" autofocus formControlName="id" data-toggle="tooltip"   
+             data-placement="right" title="Enter Id" required>  
+          <div class="alert alert-danger" *ngIf = "(iposaveform.get('id').touched) && (iposaveform.get('id').invalid)"   
+            style="margin-top: 5px;">  
+              <span *ngIf="iposaveform.get('id').errors.required">id is required</span>  
+                <span *ngIf = "iposaveform.get('id').errors.minlength">   
+                    MinLength Error   
+                </span>                     
+            </div>  
+      </div>
+
+
+          <div class="form-group">  
+              <label for="companyName">Company Name</label>  
+              <input type="text" class="form-control" required formControlName="companyName" data-toggle="tooltip"   
+                 data-placement="right" title="Enter Company Name" >  
+              <div class="alert alert-danger" *ngIf = "(iposaveform.get('companyName').touched) && (iposaveform.get('companyName').invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="iposaveform.get('companyName').errors.required">Company Name is required</span>  
+                    <span *ngIf = "iposaveform.get('companyName').errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+                </div>  
+          </div>  
+    
+          <div class="form-group">  
+            <label for="stockExchange">Stock Exchange</label>  
+            <input type="text" class="form-control" required formControlName="stockExchange" data-toggle="tooltip"   
+               data-placement="right" title="Enter stockExchange" >  
+            <div class="alert alert-danger" *ngIf = "(iposaveform.get('stockExchange').touched) && (iposaveform.get('stockExchange').invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="iposaveform.get('stockExchange').errors.required">password is required</span>  
+                  <span *ngIf = "iposaveform.get('stockExchange').errors.minlength">   
+                      MinLength Error   
+                  </span>                     
+              </div>  
+        </div> 
+
+        <div class="form-group">  
+          <label for="pricePerShare">Price Per Share</label>  
+          <input type="text" class="form-control" required formControlName="pricePerShare" data-toggle="tooltip"   
+             data-placement="right" title="Enter Price Per Share" >  
+          <div class="alert alert-danger" *ngIf = "(iposaveform.get('pricePerShare').touched) && (iposaveform.get('pricePerShare').invalid)"   
+            style="margin-top: 5px;">  
+              <span *ngIf="iposaveform.get('pricePerShare').errors.required">Price Per Share is required</span>                      
+            </div>  
+      </div>
+
+          <div class="form-group">  
+              <label for="totalNoOfShares">Total No.Of Shares</label>  
+              <input type="text" class="form-control" required formControlName="totalNoOfShares"   
+                data-toggle="tooltip" data-placement="right" title="Enter totalNoOfShares ">  
+                <div class="alert alert-danger" *ngIf = "(iposaveform.get('totalNoOfShares').touched) && (iposaveform.get('totalNoOfShares').invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="iposaveform.get('totalNoOfShares').errors.required">totalNoOfShares is Required</span>  
+                    <span *ngIf = "iposaveform.get('totalNoOfShares').errors.totalNoOfShares">   
+                        Invalid totalNoOfShares Format   
+                    </span>                     
+                </div>  
+          </div>  
+
+          <div class="form-group">  
+            <label for="openDateTime">Open Date Time</label>  
+            <input type="date" class="form-control" required formControlName="openDateTime" data-toggle="tooltip"   
+               data-placement="right">  
+            <div class="alert alert-danger" *ngIf = "(iposaveform.get('openDateTime').touched) && (iposaveform.get('openDateTime').invalid)"   
+              style="margin-top: 5px;">  
+               </div>  
+        </div>
+        <div class="form-group">  
+          <label for="remarks">Remarks</label>  
+          <input type="text" class="form-control" required formControlName="remarks" data-toggle="tooltip"   
+             data-placement="right" title="Enter Remarks" >  
+          <div class="alert alert-danger" *ngIf = "(iposaveform.get('remarks').touched) && (iposaveform.get('remarks').invalid)"   
+            style="margin-top: 5px;">  
+              <span *ngIf="iposaveform.get('remarks').errors.required">Remarks is required</span>  
+                                   
+            </div>  
+      </div>
+    
+          <button type="submit" class="btn btn-success" [disabled]=!iposaveform.valid>Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div> 
+</body>
+</html>
+

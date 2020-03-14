@@ -1,0 +1,12 @@
+body{
+    background-image: url('../images/stock6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1600px;
+    height: 670px;
+}
+.form-container{
+    -webkit-box-shadow: 2px 0px 17px 11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 0px 17px 11px rgba(0,0,0,0.75);
+    box-shadow: 2px 0px 17px 11px rgba(0,0,0,0.75);
+}

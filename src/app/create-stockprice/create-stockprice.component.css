@@ -1,0 +1,10 @@
+body{
+    background-image: url('../images/stock4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1580px;
+    height: 670px;
+}
+*{
+color: white;
+}

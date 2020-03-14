@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <br><br>
+      <form [formGroup]="sectorsaveform" #saveSectors1 (ngSubmit)="saveSectors(saveSectors1)" class="form-container p-5">  
+        <h3>{{message}}</h3>
+        <div class="form-group">  
+          <label for="id">Id</label>  
+          <input type="number" class="form-control" autofocus formControlName="id" data-toggle="tooltip"   
+             data-placement="right" title="Enter Id" required>  
+          <div class="alert alert-danger" *ngIf = "(sectorsaveform.get('id').touched) && (sectorsaveform.get('id').invalid)"   
+            style="margin-top: 5px;">  
+              <span *ngIf="sectorsaveform.get('id').errors.required">id is required</span>  
+                <span *ngIf = "sectorsaveform.get('id').errors.minlength">   
+                    MinLength Error   
+                </span>                     
+            </div>  
+      </div>
+
+
+          <div class="form-group">  
+              <label for="sectorName">Sector Name</label>  
+              <input type="text" class="form-control" required formControlName="sectorName" data-toggle="tooltip"   
+                 data-placement="right" title="Enter Sector Name" >  
+              <div class="alert alert-danger" *ngIf = "(sectorsaveform.get('sectorName').touched) && (sectorsaveform.get('sectorName').invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="sectorsaveform.get('sectorName').errors.required">Sector name is required</span>  
+                    <span *ngIf = "sectorsaveform.get('sectorName').errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+                </div>  
+          </div>  
+    
+          <div class="form-group">  
+            <label for="brief">Brief</label>  
+            <input type="text" class="form-control" required formControlName="brief" data-toggle="tooltip"   
+               data-placement="right" title="Enter brief" >  
+            <div class="alert alert-danger" *ngIf = "(sectorsaveform.get('brief').touched) && (sectorsaveform.get('brief').invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="sectorsaveform.get('brief').errors.required">Brief is required</span>  
+                  <span *ngIf = "sectorsaveform.get('brief').errors.minlength">   
+                      MinLength Error   
+                  </span>                     
+              </div>  
+        </div>
+    
+          <button type="submit" class="btn btn-success" [disabled]=!sectorsaveform.valid >Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div> 
+</body>
+</html>
+

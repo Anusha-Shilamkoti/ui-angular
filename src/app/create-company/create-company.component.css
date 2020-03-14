@@ -1,0 +1,7 @@
+body{background: url('../images/home2.jpg')no-repeat; background-size: cover;
+    height: 1000px;
+    width: 1580px;
+    }
+    *{
+        color: white;
+    }

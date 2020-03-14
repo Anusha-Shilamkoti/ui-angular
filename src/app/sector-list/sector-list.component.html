@@ -1,0 +1,30 @@
+<body>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <br><br>
+            <h3 style="text-align: center; color: white;">Sector List</h3>
+<br><table  class="table table-hover table-sm">  
+    <thead class="thead-light">  
+        <tr>  
+            <th>Id</th>  
+            <th>Sector Name</th>  
+            <th>Breif</th>  
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>  
+    </thead>  
+    <tbody>  
+         <tr *ngFor="let sector of sectorlist ">  
+            <td>{{sector.id}}</td>  
+            <td>{{sector.sectorName}}</td>  
+            <td>{{sector.brief}}</td> 
+            <td><button (click)="updateSector(sector)" class="btn btn-primary">Update</button> </td>
+            <td><button (click)="deleteSector(sector)" class="btn btn-danger">Delete</button> </td>
+          </tr>     
+    </tbody><br>  
+</table> 
+</div>
+<div class="col-lg-4"></div>
+</div> 
+</body>
